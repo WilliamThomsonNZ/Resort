@@ -1,0 +1,108 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+@import "./components/header.scss";
+@import "./components/banner.scss";
+@import "./components/Relax.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Sorts+Mill+Goudy&display=swap");
+html,
+body {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  background: $cream;
+}
+
+.container {
+  width: 1560px;
+  min-width: 1560px;
+  margin: 0 auto;
+  height: 100%;
+  @include media("<=1560px") {
+    width: 1280px;
+    min-width: 1280px;
+  }
+  @include media("<=desktop") {
+    width: 1080px;
+    min-width: 1080px;
+  }
+  @include media("<=1080px") {
+    width: 100%;
+    min-width: 100%;
+  }
+  .row {
+    display: flex;
+    height: 100%;
+    padding: 0 32px;
+    @include media("<=phone") {
+      padding: 0 16px;
+    }
+  }
+  .v-center {
+    align-items: center;
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+}
+
+.btn {
+  display: inline-block;
+  width: 250px;
+  padding: 1.5rem;
+  background: none;
+  border: solid 1px $white;
+  color: $white;
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+  &:hover {
+    border: solid 1px $green;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: $green;
+    transition: all 0.4s ease-in-out;
+    border-radius: 5px;
+  }
+  &:hover::after {
+    height: 100%;
+    top: 0;
+  }
+}
+
+//Intro overlay
+
+.intro-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 5;
+  background: $cream;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    display: inline-block;
+    margin: 0 1rem;
+    font-family: "Sorts Mill Goudy", serif;
+    font-size: 2.5rem;
+    color: $green;
+  }
+}

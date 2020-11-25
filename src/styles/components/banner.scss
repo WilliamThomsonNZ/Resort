@@ -1,0 +1,69 @@
+.banner {
+  background-image: url("../../imgs/banner-min.jpg");
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  .banner-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    .banner-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .inner-img {
+      background-image: url("../../imgs/banner-img.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 70%;
+      height: 70%;
+      @include media("<=1080px") {
+        width: 60%;
+        height: 60%;
+      }
+
+      .inner-overlay {
+        display: flex;
+        align-items: left;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        .banner-title {
+          margin-top: 0;
+          color: $white;
+          font-size: 7rem;
+          font-weight: normal;
+          line-height: 1;
+          transform: translateX(-150px);
+          font-family: "Sorts Mill Goudy", serif;
+          @include media("<=1080px") {
+            font-size: 5rem;
+            transform: translateX(-75px);
+          }
+          p {
+            margin: 0;
+            overflow: hidden;
+
+            span {
+              display: inline-block;
+            }
+          }
+        }
+        .btn-banner {
+          transform: translateX(-150px);
+          overflow: hidden;
+          @include media("<=1080px") {
+            transform: translateX(-75px);
+          }
+        }
+      }
+    }
+  }
+}
