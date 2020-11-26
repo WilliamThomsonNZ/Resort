@@ -10,7 +10,7 @@
   .logo {
     a {
       text-decoration: none;
-      color: $white;
+      color: $cream;
 
       p {
         text-align: center;
@@ -50,11 +50,11 @@
       }
     }
     .hamburger-menu {
-      width: 30px;
+      width: 40px;
 
       span {
-        margin-bottom: 0.3rem;
-        background: $white;
+        margin-bottom: 0.4rem;
+        background: $cream;
         mix-blend-mode: difference;
         height: 2px;
         width: 100%;
@@ -64,6 +64,9 @@
     .hamburger-menu-close {
       position: absolute;
       display: none;
+      svg {
+        stroke: $white;
+      }
     }
   }
 }

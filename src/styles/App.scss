@@ -3,12 +3,15 @@
 @import "./components/header.scss";
 @import "./components/banner.scss";
 @import "./components/Relax.scss";
+@import "./components/navigation.scss";
+@import "./components/accordion.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Sorts+Mill+Goudy&display=swap");
 html,
 body {
   visibility: hidden;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Lato", sans-serif;
@@ -86,14 +89,18 @@ body {
     top: 0;
   }
 }
-
+.app {
+  z-index: 3;
+  transform: translateX(0);
+  position: relative;
+}
 //Intro overlay
 
 .intro-overlay {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 5;
+  z-index: 15;
   background: $cream;
   display: flex;
   align-items: center;

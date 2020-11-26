@@ -1,4 +1,60 @@
 .relax {
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  background-color: $cream;
+  color: $green;
+  padding-top: 20vh;
+  svg {
+    width: 5rem;
+  }
+  p {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-family: "Sorts Mill Goudy", serif;
+  }
+  .relax-grid {
+    margin-top: 20vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10rem;
+    padding-bottom: 20vh;
+    .relax-img {
+      position: relative;
+      span {
+        position: absolute;
+        bottom: 7%;
+        left: -10%;
+        transform: rotate(270deg);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .relax-info {
+      text-align: left;
+      transition: all 0.3 ease-in-out;
+      height: auto;
+      align-self: center;
+
+      h2 {
+        font-family: "Sorts Mill Goudy", serif;
+        font-weight: normal;
+        font-size: 2rem;
+      }
+      p {
+        font-family: "Lato", sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+      }
+    }
+  }
 }

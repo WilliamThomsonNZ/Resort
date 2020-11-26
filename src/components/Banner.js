@@ -20,7 +20,7 @@ const Banner = () => {
                   </p>
                 </h1>
 
-                <button className="btn btn-banner">
+                <button className="btn-banner btn ">
                   <span>OUR STORY</span>
                 </button>
               </div>

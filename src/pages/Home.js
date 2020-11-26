@@ -6,17 +6,24 @@ import Relax from "../components/Relax";
 const tl = gsap.timeline();
 
 const homeAnimation = (completeAnimation) => {
-  tl.from(".intro-overlay span", {
-    duration: 1.6,
-    opacity: 0,
-    y: 100,
-    ease: "power4.out",
-    delay: 0.8,
-    skewY: 7,
-    stagger: {
-      amount: 0.6,
+  tl.to("html", {
+    duration: 0,
+    css: {
+      overflow: "hidden",
     },
   })
+
+    .from(".intro-overlay span", {
+      duration: 1.6,
+      opacity: 0,
+      y: 100,
+      ease: "power4.out",
+      delay: 0.8,
+      skewY: 7,
+      stagger: {
+        amount: 0.6,
+      },
+    })
     .to(".intro-overlay span", {
       duration: 1,
       opacity: 0,
@@ -43,7 +50,14 @@ const homeAnimation = (completeAnimation) => {
         ease: "power4.out",
       },
       3.3
-    );
+    )
+    .to("html", {
+      duration: 0,
+      css: {
+        overflow: "auto",
+      },
+      onComplete: completeAnimation,
+    });
 };
 
 const Home = () => {
@@ -57,7 +71,7 @@ const Home = () => {
 
   return (
     <>
-      <IntroAnimation />
+      {!animationComplete && <IntroAnimation />}
       <Banner />
       <Relax />
     </>
